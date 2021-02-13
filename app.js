@@ -1,6 +1,8 @@
 const hbs = require('hbs')
 const express = require('express')
 
+const config = require('./config/config')
+
 const app = express()
 
 // HANDLEBARS
@@ -37,4 +39,4 @@ app.get('*', (req,res) => {
 })
 
 // SERVIDOR
-app.listen(3000, () => console.log('||ON|| 3000'))
+app.listen(config.port, () => console.log(`||ON|| ${config.port}`))
