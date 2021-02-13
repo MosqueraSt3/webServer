@@ -1,12 +1,15 @@
 const express = require('express')
 const app = express()
 
+// HBS
+app.set('view engine', 'hbs')
+
 // CONTENIDO ESTATICO
 app.use( express.static('public') )
 
 // RUTAS
 app.get('/', (req,res) => {
-    res.sendFile(__dirname + '/public/index.html')
+    res.render('home')
 })
 
 app.get('/elements', (req,res) => {
